@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p,
+span,
+label,
+button,
+ul,
+li,
+h4,
+h5,
+h6 {
+    font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* =====Navbar===== */
+.nab_border {
+    border-bottom: 1px solid rgb(217, 217, 217);
+    /* background: #0051c3; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.support_border {
+    box-shadow: 0 0 27px -19px;
+    /* border: 1px solid black; */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* SideBarrr */
+/* .side_single_content:hover .border_dotted {
+    border-bottom: 1px solid black;
+} */
+.hide-scroll-bar::-webkit-scrollbar {
+    display: none;
 }
