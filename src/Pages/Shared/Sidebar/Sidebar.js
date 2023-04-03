@@ -9,7 +9,7 @@ import { SlEnergy } from "react-icons/sl";
 import { BiCoinStack } from "react-icons/bi";
 import { CiBullhorn } from "react-icons/ci";
 import { GiShuttlecock } from "react-icons/gi";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const Sidebar = ({ toggleOpen, setToggleOpen }) => {
@@ -42,24 +42,24 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                         </div>
                         {/* domain_register */}
                         <div className="">
-                            <div className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
+                            <div onClick={() => setDomain(!domain, setAnalytics(false), setSecurity(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                                 <p className='text-[#0051C3] text-[16px]'><TfiWorld /></p>
                                 <Link className='text-[14px] ml-[-15px]'>Domain Registration</Link>
-                                <div onClick={() => setDomain(!domain, setAnalytics(false), setSecurity(false))} className="mt-[-5px]">
+                                <div className="mt-[-5px]">
                                     <i className="fa-solid fa-sort-down text-[15px]  text-[#595959]"></i>
                                 </div>
                             </div>
-                            <div className={`py-[3px] bg-[#E9F7FB] cursor-pointer ml-[32px] pl-[37px] rounded-tl-full rounded-bl-full side_single_content ${domain ? 'block' : 'hidden'}`}>
-                                <Link to="/managedomain" className='text-[14px] border_dotted'>Menage Domains</Link>
+                            <div className={`py-[3px] hover:bg-[#E9F7FB] cursor-pointer ml-[32px] pl-[37px] rounded-tl-full rounded-bl-full side_single_content ${domain ? 'block' : 'hidden'}`}>
+                                <NavLink to="/managedomain" className='text-[14px] border_dotted'>Menage Domains</NavLink>
                             </div>
                         </div>
                         {/* Analytics__&__logs */}
                         <div className="">
-                            <div className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
+                            <div onClick={() => setAnalytics(!analytics, setDomain(false), setSecurity(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                                 {/* <i className="fa-regular fa-calendar  px-[20px]"></i> */}
                                 <p className='flex justify-end text-[#0051C3] text-[16px]'><i className="fa-solid fa-chart-pie"></i></p>
                                 <p className='text-[14px] border_dotted ml-[-13px]'>Analytics & Logs</p>
-                                <div onClick={() => setAnalytics(!analytics, setDomain(false), setSecurity(false))} className="mt-[-5px]">
+                                <div className="mt-[-5px]">
                                     <i className="fa-solid fa-sort-down text-[15px]  text-[#595959] ml-[30px]"></i>
                                 </div>
                             </div>
@@ -82,10 +82,10 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                         </div>
                         {/* Security__center */}
                         <div className="">
-                            <div className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
+                            <div onClick={() => setSecurity(!security, setDomain(false), setAnalytics(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                                 <p className='flex justify-end text-[#0051C3] text-[16px]'><i className="fa-regular fa-square-plus"></i></p>
                                 <p className='text-[14px] border_dotted ml-[-20px]'>Security Center</p>
-                                <div onClick={() => setSecurity(!security, setDomain(false), setAnalytics(false))} className="mt-[-5px]">
+                                <div className="mt-[-5px]">
                                     <i className="fa-solid fa-sort-down text-[15px]  text-[#595959] ml-[30px]"></i>
                                 </div>
                             </div>
@@ -129,10 +129,10 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                     <div className="border-b pb-[10px]">
                         {/* Workers */}
                         <div className="mt-[10px]">
-                            <div className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
+                            <div onClick={() => setWorkers(!workers, setAnalytics(false), setSecurity(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                                 <p className='text-[#0051C3] text-[16px]'><BsSuitDiamond /></p>
                                 <p className='text-[14px] ml-[-100px]'>Workers</p>
-                                <div onClick={() => setWorkers(!workers, setAnalytics(false), setSecurity(false))} className="mt-[-5px]">
+                                <div className="mt-[-5px]">
                                     <i className="fa-solid fa-sort-down text-[15px]  text-[#595959]"></i>
                                 </div>
                             </div>
@@ -165,10 +165,10 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                         </div>
                         {/* R2 */}
                         <div className="">
-                            <div className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
+                            <div onClick={() => setR2(!R2, setAnalytics(false), setSecurity(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                                 <p className='text-[#0051C3] text-[16px]'><BiCoinStack /></p>
                                 <p className='text-[14px] ml-[-143px]'>R2</p>
-                                <div onClick={() => setR2(!R2, setAnalytics(false), setSecurity(false))} className="mt-[-5px]">
+                                <div className="mt-[-5px]">
                                     <i className="fa-solid fa-sort-down text-[15px]  text-[#595959]"></i>
                                 </div>
                             </div>
@@ -197,10 +197,10 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                     {/* MenageAccount_notification_bulk_start */}
                     {/* Manage_Account */}
                     <div className="mt-[10px]">
-                        <div className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
+                        <div onClick={() => setManage(!manage, setAnalytics(false), setSecurity(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                             <p className='text-[#0051C3] text-[16px]'><IoSettingsOutline /></p>
                             <p className='text-[14px] ml-[-40px]'>Manage Account</p>
-                            <div onClick={() => setManage(!manage, setAnalytics(false), setSecurity(false))} className="mt-[-5px]">
+                            <div className="mt-[-5px]">
                                 <i className="fa-solid fa-sort-down text-[15px]  text-[#595959]"></i>
                             </div>
                         </div>

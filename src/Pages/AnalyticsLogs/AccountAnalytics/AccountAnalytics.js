@@ -2,13 +2,13 @@ import React from 'react';
 
 const AccountAnalytics = () => {
     return (
-        <div className='w-[80%] px-[10px] mx-auto'>
+        <div className='sm:w-[80%] px-[10px] mx-auto'>
             <div className="">
-                <header className='py-[20px]'>
-                    <h1 className='text-[34px] font-bold'><span className='text-[30px] font-medium'>All sites for</span> rkrocky2018@gmail.com's Account</h1>
+                <header className='py-[20px] '>
+                    <h1 className='text-[34px] font-bold '><span className='text-[30px] font-medium'>All sites for</span> rkrocky2018@gmail.com's Account</h1>
                 </header>
                 {/* download_Content_and_selectDate */}
-                <div className="flex items-center gap-10 justify-end">
+                <div className="flex md:flex-row flex-col items-center gap-5 justify-end">
                     <div className="text-[#0051c3] text-[14px]">
                         <i className="fa-solid fa-arrow-down"></i>
                     </div>
@@ -16,7 +16,7 @@ const AccountAnalytics = () => {
                         <p>Download data for: All sites for account,<br /> Previous 7 days</p>
                     </div>
                     <div className="">
-                        <select name="" id="" className='border border-black cursor-pointer border-black text-[18px] pl-[10px] pr-[50px] py-[5px] rounded-[5px]'>
+                        <select name="" id="" className='border cursor-pointer border-black text-[18px] pl-[10px] pr-[50px] py-[5px] rounded-[5px]'>
                             <option value="">Previous 7 days</option>
                             <option value="">Previous 24 hours</option>
                             <option value="">Previous 7 days</option>

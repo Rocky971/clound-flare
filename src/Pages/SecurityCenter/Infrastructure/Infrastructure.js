@@ -11,7 +11,7 @@ const Infrastructure = () => {
                 </header>
                 <section>
                     {/* card */}
-                    <div className="border rounded border-[#B6B6B6] mb-[125px] flex justify-between">
+                    <div className="border rounded border-[#B6B6B6] mb-[5px] lg:mb-[125px] flex justify-between md:flex-row flex-col items-center">
                         <div className="py-[30px] px-[35px]">
                             <div className="mb-[30px]">
                                 <p className='text-[20px] font-medium'>perform initial scan</p>
@@ -23,8 +23,8 @@ const Infrastructure = () => {
                                 <button className='bg-[#056Dff] text-white px-[20px] py-[6px] rounded'>Start scan</button>
                             </div>
                         </div>
-                        <div className="w-[28%] flex items-center">
-                            <img src={img} alt="" />
+                        <div className="flex items-center">
+                            <img src={img} className='w-[200px]' alt="" />
                         </div>
                     </div>
                 </section>

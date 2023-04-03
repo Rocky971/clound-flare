@@ -2,7 +2,7 @@ import React from 'react';
 
 const Investigate = () => {
     return (
-        <div className='w-[75%] mx-auto mt-[40px] mb-[300px]'>
+        <div className='w-[75%] mx-auto mt-[40px] mb-[50px] lg:mb-[300px]'>
             <div className="flex md:flex-row flex-col  gap-5">
                 <div className="">
                     <div className="">

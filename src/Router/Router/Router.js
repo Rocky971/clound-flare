@@ -10,6 +10,8 @@ import Infrastructure from "../../Pages/SecurityCenter/Infrastructure/Infrastruc
 import Investigate from "../../Pages/SecurityCenter/Investigate/Investigate";
 import Turnstile from "../../Pages/Turnstile/Turnstile/Turnstile";
 import Area from "../../Pages/Area/Area/Area";
+import Login from "../../Pages/Login/Login";
+import Signup from "../../Pages/Signup/Signup";
 
 const router = createBrowserRouter([
     {
@@ -57,6 +59,14 @@ const router = createBrowserRouter([
                 element: <Area />
             }
         ]
+    },
+    {
+        path: "/login",
+        element: <Login />
+    },
+    {
+        path: "/signup",
+        element: <Signup />
     }
 ]);
 export default router;

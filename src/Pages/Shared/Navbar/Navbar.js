@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const logo = "https://i.ibb.co/7J5K2by/Home-Mdmasude7-gmail-com-s-Account-Cloudflare-removebg-preview.png";
 const Navbar = ({ toggleOpen, setToggleOpen }) => {
@@ -21,7 +22,7 @@ const Navbar = ({ toggleOpen, setToggleOpen }) => {
         }
     }, []);
     return (
-        <div className=' nab_border' ref={menuRef}>
+        <div className='bg-white nab_border' ref={menuRef}>
             <div className="flex items-center justify-between ml-[20px] mr-[30px]">
                 {/* logo___start */}
                 <div className="flex items-center">
@@ -30,7 +31,7 @@ const Navbar = ({ toggleOpen, setToggleOpen }) => {
                             !toggleOpen ? <i className="fa-solid fa-bars"></i> : <i className="fa-solid fa-x"></i>
                         }
                     </div>
-                    <img src={logo} alt="" />
+                    <img src={logo} className='hidden md:block' alt="" />
                 </div>
                 {/* logo___end */}
                 {/* menu__item__start */}
@@ -106,7 +107,9 @@ const Navbar = ({ toggleOpen, setToggleOpen }) => {
                                     <li className=''>Appearance</li>
                                     <li className='px-[10px] rounded-full bg-[#fbcda5]'>Beta</li>
                                 </div>
-                                <li className='p-[16px]  hover:bg-[#F2F2F2] cursor-pointer'>Log Out</li>
+                                <p className='p-[16px]  hover:bg-[#F2F2F2] cursor-pointer'>
+                                    <Link to="/login">Log Out</Link>
+                                </p>
                             </ul>
                         </div>
                     </div>
