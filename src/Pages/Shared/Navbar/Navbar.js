@@ -54,7 +54,7 @@ const Navbar = ({ toggleOpen, setToggleOpen }) => {
                             <p>Support</p>
                             <i className="fa-solid fa-sort-down text-[23px] mt-[-5px] text-[#595959]"></i>
                         </div>
-                        <div className={`absolute top-[70px] right-[0px] min-w-[9.5rem] support_border border rounded-[3px] ${dropSupport ? 'block' : 'hidden'}`}>
+                        <div className={`bg-white z-[9999] absolute top-[70px] right-[0px] min-w-[9.5rem] support_border border rounded-[3px] ${dropSupport ? 'block' : 'hidden'}`}>
                             <ul>
                                 <li className='p-[16px]  hover:bg-[#F2F2F2] cursor-pointer'>Community Support</li>
                                 <li className='p-[16px]  hover:bg-[#F2F2F2] cursor-pointer'>Help Center</li>
@@ -70,7 +70,7 @@ const Navbar = ({ toggleOpen, setToggleOpen }) => {
                             <p>English (US)</p>
                             <i className="fa-solid fa-sort-down text-[23px] mt-[-5px] text-[#595959]"></i>
                         </div>
-                        <div className={`absolute top-[70px] right-[0px] min-w-[9.5rem] support_border border rounded-[3px] h-[80vh] overflow-hidden overflow-y-scroll ${dropEnglish ? 'block' : 'hidden'}`}>
+                        <div className={`bg-white z-[9999] absolute top-[70px] right-[0px] min-w-[9.5rem] support_border border rounded-[3px] h-[80vh] overflow-hidden overflow-y-scroll ${dropEnglish ? 'block' : 'hidden'}`}>
                             <ul>
                                 <li className='p-[16px]  hover:bg-[#F2F2F2] cursor-pointer'>English (US)</li>
                                 <li className='p-[16px]  hover:bg-[#F2F2F2] cursor-pointer'>Deustsch</li>
@@ -95,7 +95,7 @@ const Navbar = ({ toggleOpen, setToggleOpen }) => {
                             <p><i className="fa-solid fa-user text-[#595959]"></i></p>
                             <i className="fa-solid fa-sort-down text-[23px] mt-[-5px] text-[#595959]"></i>
                         </div>
-                        <div className={`absolute top-[70px] right-[0px] min-w-[9.5rem] support_border border rounded-[3px] ${dropProfile ? 'block' : 'hidden'}`}>
+                        <div className={`bg-white z-[9999] absolute top-[70px] right-[0px] min-w-[9.5rem] support_border border rounded-[3px] ${dropProfile ? 'block' : 'hidden'}`}>
                             <ul>
                                 <div className='hover:bg-[#F2F2F2]'>
                                     <li className='px-[16px] pt-[16px]   cursor-pointer'>My Profile</li>

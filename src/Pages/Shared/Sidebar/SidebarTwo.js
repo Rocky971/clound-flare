@@ -10,9 +10,7 @@ import { BiCoinStack } from "react-icons/bi";
 import { CiBullhorn } from "react-icons/ci";
 import { GiShuttlecock } from "react-icons/gi";
 import { Link, NavLink } from 'react-router-dom';
-
-
-const Sidebar = ({ toggleOpen, setToggleOpen }) => {
+const SidebarTwo = ({ toggleOpen, setToggleOpen }) => {
     const [domain, setDomain] = useState(false);
     const [analytics, setAnalytics] = useState(false);
     const [security, setSecurity] = useState(false);
@@ -21,13 +19,13 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
     const [manage, setManage] = useState(false);
     const [expand, setExpand] = useState();
     return (
-        <div className={` h-[92.5vh] top-[70px] border-r hidden lg:block ${toggleOpen ? 'block' : 'hidden'} ${expand ? 'w-[280px] ' : 'w-[75px]'}`}>
+        <div className={`absolute bg-white z-[9999] h-[92.5vh] top-[70px] block lg:hidden border-r ${toggleOpen ? 'block' : 'hidden'} w-[280px]`}>
             <div className="text-[12px]">
                 {/* user_profile_name */}
-                <div className="h-[60px] flex items-center justify-center text-[16px] font-semibold text-black overflow-ellipsis border-b cursor-pointer">
+                <div className="h-[60px] flex border-t items-center justify-center text-[16px] font-semibold text-black overflow-ellipsis border-b cursor-pointer">
                     <span>
                         {
-                            expand ? <h1>rkrocky2018@gmail.com</h1> : <span className='border border-blue-700 p-[8px] rounded-full bg-[#ECF4FF]'>RK</span>
+                            expand ? <h1>rkrocky2018@gmail.com</h1> : <h1>rkrocky2018@gmail.com</h1>
                         }
                     </span>
                 </div>
@@ -40,20 +38,20 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                             <Link to='/' className="text-[14px] flex items-center gap-[3px] py-[10px]  bg-[#ECF4FF] cursor-pointer ml-[8px] mt-[10px] border border-[#B9D6FF] rounded-tl-full rounded-bl-full side_single_content">
 
                                 <p className='pl-[20px] pr-[10px] text-[#0051C3] font-bold text-[16px]'><BsCalendar4 /></p>
-                                <p className={`text-[14px] font-bold border_dotted ml-[10px] ${expand ? 'block' : 'hidden'}`}>Websites</p>
+                                <p className={`text-[14px] font-bold border_dotted ml-[10px] `}>Websites</p>
                             </Link>
                         </div>
                         {/* domain_register */}
                         <div className="">
                             <div onClick={() => setDomain(!domain, setAnalytics(false), setSecurity(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                                 <p className='text-[#0051C3] text-[16px]'><TfiWorld /></p>
-                                <Link className={`text-[14px] ml-[-15px] ${expand ? 'block' : 'hidden'}`} >Domain Registration</Link>
-                                <div className={`mt-[-5px]  ${expand ? 'block' : 'hidden'}`}>
+                                <Link className={`text-[14px] ml-[-15px] `} >Domain Registration</Link>
+                                <div className={`mt-[-5px]  `}>
                                     <i className={`fa-solid fa-sort-down text-[15px]  text-[#595959]`}></i>
                                 </div>
                             </div>
                             <div className={`py-[3px] hover:bg-[#E9F7FB] cursor-pointer ml-[32px] pl-[37px] rounded-tl-full rounded-bl-full side_single_content ${domain ? 'block' : 'hidden'}`}>
-                                <NavLink to="/managedomain" className={`text-[14px] border_dotted ${expand ? 'block' : 'hidden'}`}>Menage Domains</NavLink>
+                                <NavLink to="/managedomain" className={`text-[14px] border_dotted `}>Menage Domains</NavLink>
                             </div>
                         </div>
                         {/* Analytics__&__logs */}
@@ -61,8 +59,8 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                             <div onClick={() => setAnalytics(!analytics, setDomain(false), setSecurity(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                                 {/* <i className="fa-regular fa-calendar  px-[20px]"></i> */}
                                 <p className='flex justify-end text-[#0051C3] text-[16px]'><i className="fa-solid fa-chart-pie"></i></p>
-                                <Link className={`text-[14px] border_dotted ml-[-13px] ${expand ? 'block' : 'hidden'}`}>Analytics & Logs</Link>
-                                <div className={`mt-[-5px] ${expand ? 'block' : 'hidden'}`}>
+                                <Link className={`text-[14px] border_dotted ml-[-13px] `}>Analytics & Logs</Link>
+                                <div className={`mt-[-5px] `}>
                                     <i className="fa-solid fa-sort-down text-[15px]  text-[#595959] ml-[30px]"></i>
                                 </div>
                             </div>
@@ -87,8 +85,8 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                         <div className="">
                             <div onClick={() => setSecurity(!security, setDomain(false), setAnalytics(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                                 <p className='flex justify-end text-[#0051C3] text-[16px]'><i className="fa-regular fa-square-plus"></i></p>
-                                <Link className={`text-[14px] border_dotted ml-[-20px] ${expand ? 'block' : 'hidden'}`}>Security Center</Link>
-                                <div className={`mt-[-5px] ${expand ? 'block' : 'hidden'}`}>
+                                <Link className={`text-[14px] border_dotted ml-[-20px] `}>Security Center</Link>
+                                <div className={`mt-[-5px] `}>
                                     <i className="fa-solid fa-sort-down text-[15px]  text-[#595959] ml-[30px]"></i>
                                 </div>
                             </div>
@@ -113,19 +111,19 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                     <div className="border-b">
                         <Link to="/turnstile" className="flex items-center gap-[3px] py-[10px]  hover:bg-[#E9F7FB] cursor-pointer ml-[8px] mt-[10px] mb-[10px] rounded-tl-full rounded-bl-full side_single_content">
                             <p className='pl-[20px] pr-[10px] text-[#0051C3] font-bold text-[16px]'><BsCheck2Circle /></p>
-                            <p className={`ml-[10px] ${expand ? 'block' : 'hidden'}`}>Turnstile</p>
-                            <p className={`px-[10px] rounded-full bg-[#fbcda5] ${expand ? 'block' : 'hidden'}`}>Beta</p>
+                            <p className={`ml-[10px] `}>Turnstile</p>
+                            <p className={`px-[10px] rounded-full bg-[#fbcda5] `}>Beta</p>
                         </Link>
                     </div>
                     {/* Zero__trust */}
                     <div className="border-b">
                         <div className="flex items-center gap-[3px] py-[10px]  hover:bg-[#E9F7FB] cursor-pointer ml-[8px] mt-[10px] rounded-tl-full rounded-bl-full side_single_content">
                             <p className='pl-[20px] pr-[10px] text-[#0051C3] font-bold text-[16px]'><IoShieldCheckmarkOutline /></p>
-                            <p className={`ml-[10px] ${expand ? 'block' : 'hidden'}`}>Zero Trust</p>
+                            <p className={`ml-[10px] `}>Zero Trust</p>
                         </div>
                         <Link to='/area' className="flex items-center gap-[3px] py-[10px] mb-[10px]  hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                             <p className='pl-[20px] pr-[10px] text-[#0051C3] font-bold text-[16px]'><MdOutlineForwardToInbox /></p>
-                            <p className={`ml-[10px] ${expand ? 'block' : 'hidden'}`}>Area 1</p>
+                            <p className={`ml-[10px] `}>Area 1</p>
                         </Link>
                     </div>
                     {/* Works_pages_r2__start */}
@@ -134,8 +132,8 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                         <div className="mt-[10px]">
                             <div onClick={() => setWorkers(!workers, setAnalytics(false), setSecurity(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                                 <p className='text-[#0051C3] text-[16px]'><BsSuitDiamond /></p>
-                                <p className={`text-[14px] ml-[-100px] ${expand ? 'block' : 'hidden'}`}>Workers</p>
-                                <div className={`mt-[-5px] ${expand ? 'block' : 'hidden'}`}>
+                                <p className={`text-[14px] ml-[-100px] `}>Workers</p>
+                                <div className={`mt-[-5px] `}>
                                     <i className="fa-solid fa-sort-down text-[15px]  text-[#595959]"></i>
                                 </div>
                             </div>
@@ -164,14 +162,14 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                         {/* Pages */}
                         <div className="flex items-center gap-[3px] py-[10px]  hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                             <p className='pl-[20px] pr-[10px] text-[#0051C3] font-bold text-[16px]'><SlEnergy /></p>
-                            <p className={`ml-[10px] ${expand ? 'block' : 'hidden'}`}>Pages</p>
+                            <p className={`ml-[10px] `}>Pages</p>
                         </div>
                         {/* R2 */}
                         <div className="">
                             <div onClick={() => setR2(!R2, setAnalytics(false), setSecurity(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                                 <p className='text-[#0051C3] text-[16px]'><BiCoinStack /></p>
-                                <p className={`text-[14px] ml-[-143px] ${expand ? 'block' : 'hidden'}`}>R2</p>
-                                <div className={`mt-[-5px] ${expand ? 'block' : 'hidden'}`}>
+                                <p className={`text-[14px] ml-[-143px] `}>R2</p>
+                                <div className={`mt-[-5px] `}>
                                     <i className="fa-solid fa-sort-down text-[15px]  text-[#595959]"></i>
                                 </div>
                             </div>
@@ -188,12 +186,12 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                         {/* Stream */}
                         <div className="flex items-center gap-[3px] py-[10px]  hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                             <p className='pl-[20px] pr-[10px] text-[#0051C3] font-bold text-[16px]'><MdOutlineVideoSettings /></p>
-                            <p className={`ml-[10px] ${expand ? 'block' : 'hidden'}`}>Stream</p>
+                            <p className={`ml-[10px] `}>Stream</p>
                         </div>
                         {/* Images */}
                         <div className="flex items-center gap-[3px] py-[10px]  hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                             <p className='pl-[20px] pr-[10px] text-[#0051C3] font-bold text-[16px]'><IoImageOutline /></p>
-                            <p className={`ml-[10px] ${expand ? 'block' : 'hidden'}`}>Images</p>
+                            <p className={`ml-[10px] `}>Images</p>
                         </div>
                     </div>
                     {/* Works_pages_r2__end */}
@@ -202,8 +200,8 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                     <div className="mt-[10px]">
                         <div onClick={() => setManage(!manage, setAnalytics(false), setSecurity(false))} className="flex items-center justify-between gap-[3px] py-[10px] px-[21px] hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                             <p className='text-[#0051C3] text-[16px]'><IoSettingsOutline /></p>
-                            <p className={`text-[14px] ml-[-40px] ${expand ? 'block' : 'hidden'}`}>Manage Account</p>
-                            <div className={`mt-[-5px] ${expand ? 'block' : 'hidden'}`}>
+                            <p className={`text-[14px] ml-[-40px] `}>Manage Account</p>
+                            <div className={`mt-[-5px] `}>
                                 <i className="fa-solid fa-sort-down text-[15px]  text-[#595959]"></i>
                             </div>
                         </div>
@@ -223,24 +221,25 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
                     {/* Notification */}
                     <div className="flex items-center gap-[3px] py-[10px]  hover:bg-[#E9F7FB] cursor-pointer ml-[8px] rounded-tl-full rounded-bl-full side_single_content">
                         <p className='pl-[20px] pr-[10px] text-[#0051C3] font-bold text-[16px]'><CiBullhorn /></p>
-                        <p className={`ml-[10px] ${expand ? 'block' : 'hidden'}`}>Notification</p>
+                        <p className={`ml-[10px] `}>Notification</p>
                     </div>
                     {/* Bulk */}
                     <div className="border-b mb-3">
                         <div className="flex items-center gap-[3px] py-[10px]  hover:bg-[#E9F7FB] cursor-pointer ml-[8px] mb-[10px] rounded-tl-full rounded-bl-full side_single_content">
                             <p className='pl-[20px] pr-[10px] text-[#0051C3] font-bold text-[16px]'><GiShuttlecock /></p>
-                            <p className={`ml-[10px] ${expand ? 'block' : 'hidden'}`}>Bulk Redirects</p>
-                            <p className={`px-[10px] rounded-full bg-[#fbcda5] ${expand ? 'block' : 'hidden'}`}>Beta</p>
+                            <p className={`ml-[10px] `}>Bulk Redirects</p>
+                            <p className={`px-[10px] rounded-full bg-[#fbcda5] `}>Beta</p>
                         </div>
                     </div>
                     {/* MenageAccount_notification_bulk_end */}
                 </div>
                 {/* Expand */}
+                {/* onClick={() => setExpand(!expand)}  */}
                 <div className="border-t pt-[10px] hidden lg:block">
-                    <div onClick={() => setExpand(!expand)} className="flex items-center gap-[3px] py-[10px]   cursor-pointer ml-[8px] mb-[10px] rounded-tl-full rounded-bl-full side_single_content">
+                    <div className="flex items-center gap-[3px] py-[10px]   cursor-pointer ml-[8px] mb-[10px] rounded-tl-full rounded-bl-full side_single_content">
                         <p className='pl-[20px] pr-[10px] text-[#0051C3] font-bold text-[16px]'>                        <i className="fa-solid fa-angles-right"></i>
                         </p>
-                        <p className={`ml-[10px] ${expand ? 'block' : 'hidden'}`}>Collapse sidebar</p>
+                        <p className={`ml-[10px] `}>Collapse sidebar</p>
                     </div>
                 </div>
             </div>
@@ -248,4 +247,4 @@ const Sidebar = ({ toggleOpen, setToggleOpen }) => {
     );
 };
 
-export default Sidebar;
+export default SidebarTwo;

@@ -5,7 +5,7 @@ const Footer = () => {
     const liClass = 'text-[14px] mb-[5px] tracking-[0] leading-[24px] font-normal'
     return (
         <div className='pt-[60px] border-t'>
-            <div className="w-[70%] mx-auto flex flex-wrap justify-between pb-2">
+            <div className="w-[70%] mx-auto flex md:flex-row gap-10 flex-col justify-between pb-2">
                 {/* *** */}
                 <div className="">
                     <h4 className='text-[#4a6375] text-[14px] font-semibold mb-[10px] tracking-[.5px] leading-[17px]'>Contact</h4>
